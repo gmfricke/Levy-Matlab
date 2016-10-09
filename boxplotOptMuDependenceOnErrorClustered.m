@@ -108,9 +108,10 @@ bestMusClustered = [bestMuForError0Clustered'...
                     bestMuForError0875Clustered'...
                     ]
 
-
+hold on
 boxplot(bestMusClustered,'boxstyle','outline', 'labels', textscan(num2str(errorLevel),'%s'))
-
+plot(mean(bestMusClustered), 'ko')
 xlabel('Error rate per second')
 ylabel('\mu')
 title('Clustered');
+hold off

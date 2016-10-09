@@ -4,7 +4,7 @@ nSearchers = [1, 2, 4, 8, 16];
 % Read the experiment data (rows are replicates, columns correspond to mu values)
 Searchers1Clustered = table2array(Searchers1SensorError0RateBounds40x40Clustered)
 % Find the best performing experiment for each set of repicates
-bestSearchers1Clustered = max(Error0Clustered,[],2);
+bestSearchers1Clustered = max(Searchers1Clustered,[],2);
 % Get the mu for that experiment (assumes the columns are in the order of mu values in mus above)
 bestMusForSearchers1Clustered = zeros(length(bestSearchers1Clustered),1);
 for i = 1:length(bestSearchers1Clustered)
@@ -81,9 +81,10 @@ bestMusSearchersClustered = [bestMuForSearchers1Clustered'...
                     bestMuForSearchers16Clustered'...
                     ]
 
-
+hold on
 boxplot(bestMusSearchersClustered,'boxstyle','outline', 'labels', textscan(num2str(nSearchers),'%s'))
-
+plot(mean(bestMusSearchersClustered),'ko')
 xlabel('N Searchers')
 ylabel('\mu')
 title('Clustered');
+hold off

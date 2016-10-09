@@ -73,7 +73,6 @@ for i = 1:length(bestSearchers16Uniform)
     bestMuForSearchers16Uniform(i) = mus(mask)
 end
 
-
 bestMusSearchersUniform = [bestMuForSearchers1Uniform'... 
                     bestMuForSearchers2Uniform'...
                     bestMuForSearchers4Uniform'...
@@ -81,9 +80,10 @@ bestMusSearchersUniform = [bestMuForSearchers1Uniform'...
                     bestMuForSearchers16Uniform'...
                     ]
 
-
+hold on
 boxplot(bestMusSearchersUniform,'boxstyle','outline', 'labels', textscan(num2str(nSearchers),'%s'))
-
+plot(mean(bestMusSearchersUniform),'ko')
 xlabel('N Searchers')
 ylabel('\mu')
 title('Uniform');
+hold off

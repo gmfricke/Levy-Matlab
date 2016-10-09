@@ -108,9 +108,10 @@ bestMusPowerLaw = [bestMuForError0PowerLaw'...
                     bestMuForError0875PowerLaw'...
                     ]
 
-
+hold on
 boxplot(bestMusPowerLaw,'boxstyle','outline', 'labels', textscan(num2str(errorLevel),'%s'))
-
+plot(mean(bestMusPowerLaw), 'ko')
 xlabel('Error rate per second')
 ylabel('\mu')
 title('PowerLaw');
+hold off

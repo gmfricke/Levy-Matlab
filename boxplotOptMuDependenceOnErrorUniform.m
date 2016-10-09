@@ -108,9 +108,10 @@ bestMusUniform = [bestMuForError0Uniform'...
                     bestMuForError0875Uniform'...
                     ]
 
-
+hold on
 boxplot(bestMusUniform,'boxstyle','outline', 'labels', textscan(num2str(errorLevel),'%s'))
-
+plot(mean(bestMusUniform),'ko')
 xlabel('Error rate per second')
 ylabel('\mu')
 title('Uniform');
+hold off

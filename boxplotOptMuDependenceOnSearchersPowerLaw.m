@@ -81,9 +81,10 @@ bestMusSearchersPowerLaw = [bestMuForSearchers1PowerLaw'...
                     bestMuForSearchers16PowerLaw'...
                     ]
 
-
+hold on
 boxplot(bestMusSearchersPowerLaw,'boxstyle','outline', 'labels', textscan(num2str(nSearchers),'%s'))
-
+plot(mean(bestMusSearchersPowerLaw),'ko')
 xlabel('N Searchers')
 ylabel('\mu')
 title('PowerLaw');
+hold off
